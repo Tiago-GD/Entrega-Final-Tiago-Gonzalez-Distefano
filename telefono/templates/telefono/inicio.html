@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Nuestro Sitio Web</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #f39c12; /* Amarillo */
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .productos {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .producto {
+            flex: 0 0 30%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Nuestro Sitio Web</h1>
+    <p>Explora nuestra amplia selección de productos electrónicos, incluyendo teléfonos, auriculares y relojes.</p>
+
+    <div class="productos">
+        <div class="producto">
+            <!-- Puedes agregar una etiqueta img aquí si deseas mostrar una imagen -->
+            <h2>Teléfonos</h2>
+            <p>Descubre los últimos modelos de teléfonos inteligentes con tecnología de punta.</p>
+        </div>
+
+        <div class="producto">
+            <!-- Puedes agregar una etiqueta img aquí si deseas mostrar una imagen -->
+            <h2>Auriculares</h2>
+            <p>Sumérgete en la música con nuestros auriculares de alta calidad y rendimiento.</p>
+        </div>
+
+        <div class="producto">
+            <!-- Puedes agregar una etiqueta img aquí si deseas mostrar una imagen -->
+            <h2>Relojes</h2>
+            <p>Lleva el tiempo contigo con elegancia y estilo con nuestra colección de relojes.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock main %} 

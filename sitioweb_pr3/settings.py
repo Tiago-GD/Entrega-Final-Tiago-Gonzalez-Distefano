@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'telefono',
+    'auricular',
+    'reloj'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'sitioweb_pr3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,10 +79,21 @@ WSGI_APPLICATION = 'sitioweb_pr3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'NAME': BASE_DIR / "db.sqlite3",
+    },
+    'TelefonoBD': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "telefono_telefono.sqlite3",
+    },
+    'AuricularBD': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "auricular_auricular.sqlite3",
+    },
+     'RelojBD': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "reloj_reloj.sqlite3",
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

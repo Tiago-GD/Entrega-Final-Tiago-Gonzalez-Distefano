@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Teléfonos
+{% endblock title_head %}
+
+{% block header %}
+Teléfonos
+{% endblock header %}
+
+{% block main %}
+<p>
+    <a href="{% url 'crear_telefono' %}" class="btn btn-primary">Crear Teléfono</a>
+  </p>
+
+  <form action="">
+    {{formulario}}
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+{% if listado_de_telefonos %}
+<ul>
+    {% for telefono in listado_de_telefonos %}
+    <li> {{telefono}} </li>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron teléfonos.</p>
+{% endif %}
+
+{% endblock main %} 

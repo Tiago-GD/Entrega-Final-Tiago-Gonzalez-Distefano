@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Relojes
+{% endblock title_head %}
+
+{% block header %}
+Relojes
+{% endblock header %}
+
+{% block main %}
+<p>
+    <a href="{% url 'crear_reloj' %}" class="btn btn-primary">Crear Reloj</a>
+  </p>
+
+  <form action="">
+    {{formulario}}
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+{% if listado_de_relojes %}
+<ul>
+    {% for reloj in listado_de_relojes %}
+    <li> {{reloj}} </li>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron relojes.</p>
+{% endif %}
+
+{% endblock main %} 

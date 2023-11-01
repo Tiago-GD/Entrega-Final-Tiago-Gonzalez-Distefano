@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Auriculares
+{% endblock title_head %}
+
+{% block header %}
+Auriculares
+{% endblock header %}
+
+{% block main %}
+<p>
+    <a href="{% url 'crear_auricular' %}" class="btn btn-primary">Crear Auricular</a>
+  </p>
+
+  <form action="">
+    {{formulario}}
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+{% if listado_de_auriculares %}
+<ul>
+    {% for auricular in listado_de_auriculares %}
+    <li> {{auricular}} </li>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron auriculares.</p>
+{% endif %}
+
+{% endblock main %} 
