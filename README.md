@@ -1,5 +1,5 @@
 # Tercera-pre-entrega-Tiago-Gonzalez-Distefano
-Guía de los Pasos Básicos para Utilizar Nuestra Aplicación
+Guía de los pasos básicos para utilizar la aplicación
 
 1. Página de Inicio:
 * Al cargar la aplicación, estarás en la página de inicio donde encontrarás información variada sobre nuestra plataforma.
