@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Login
+{% endblock title_head %}
+
+{% block header %}
+Iniciar sesión
+{% endblock header %}
+
+
+{% block main %}
+<form action="{% url 'login' %}" method="POST" class="my-4">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+
+    <button type="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
+</form>
+
+{% endblock main %}
+
+
+

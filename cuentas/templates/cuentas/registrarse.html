@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Registrarse
+{% endblock title_head %}
+
+{% block header %}
+Registrarse
+{% endblock header %}
+
+
+{% block main %}
+<form action='' method="POST" style="margin-top: 20px; margin-bottom: 20px;">
+    {% csrf_token %}
+    <table>
+        {{ formulario }}
+    </table>
+    <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
+</form>
+
+{% endblock main %}

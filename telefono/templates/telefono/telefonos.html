@@ -21,11 +21,13 @@ Teléfonos
 {% if listado_de_telefonos %}
 <ul>
     {% for telefono in listado_de_telefonos %}
-    <li> {{telefono}} </li>
-        {% endfor %}
+    <li>{{telefono}} | <a href={% url "detalle_telefono" telefono.id %}>Detalles</a> | <a href={% url "actualizar_telefono" telefono.id %}>Actualizar</a> | <a href={% url "eliminar_telefono" telefono.id %}>Eliminar</a> 
+      {% endfor %}
+
 </ul>
 {% else %}
-<p>No se encontraron teléfonos.</p>
+<p>No se encontraron teléfonos</p>
 {% endif %}
+
 
 {% endblock main %} 

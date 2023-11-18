@@ -21,11 +21,14 @@ Relojes
 {% if listado_de_relojes %}
 <ul>
     {% for reloj in listado_de_relojes %}
-    <li> {{reloj}} </li>
-        {% endfor %}
+    <li>{{reloj}} | <a href={% url "detalle_reloj" reloj.id %}>Detalles</a> | <a href={% url "actualizar_reloj" reloj.id %}>Actualizar</a> | <a href={% url "eliminar_reloj" reloj.id %}>Eliminar</a> 
+      {% endfor %}
+
 </ul>
 {% else %}
-<p>No se encontraron relojes.</p>
+<p>No se encontraron relojes</p>
 {% endif %}
+
+
 
 {% endblock main %} 

@@ -9,7 +9,6 @@
         
         <title>{% block title_head %}Inicio{% endblock title_head %}</title>
         
-        {% comment %} <title>Agency - Start Bootstrap Theme</title> {% endcomment %}
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -28,28 +27,61 @@
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
+                
+                <div class="float-left">
+                    {% if not request.user.is_authenticated %}
+                    <a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a>
+                    <a class="btn btn-primary" href={% url "registro" %}>Registrarse</a>
+                    {% else %}
+                    <style>
+                        .avatar-circle {
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    </style>
+                    
+                    {% if request.user.datosextra.avatar and request.user.datosextra.avatar.url %}
+                    <img src="{{ request.user.datosextra.avatar.url }}" alt="avatar" class="avatar-circle" height="40px">
+                    {% endif %}
+                    <a class="navbar-brand" href={% url "info_cuenta" %}> {{request.user.username}}</a>
+                    <a class="btn btn-warning" href={% url "logout" %}>Cerrar Sesion</a>
+                    {% endif %}
+                </div>
+        
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-
-                        <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
-                        <a class="navbar-brand" href={% url "telefono" %}>Teléfonos</a>
-                        <a class="navbar-brand" href={% url "auricular" %}>Auriculares</a>
-                        <a class="navbar-brand" href={% url "reloj" %}>Relojes</a>
-
-
+                        <li class="nav-item"><a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="navbar-brand" href="{% url 'telefono' %}">Teléfonos</a></li>
+                        <li class="nav-item"><a class="navbar-brand" href="{% url 'auricular' %}">Auriculares</a></li>
+                        <li class="nav-item"><a class="navbar-brand" href="{% url 'reloj' %}">Relojes</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                {% comment %} {% block header %} {% endcomment %}
                 <div class="masthead-heading text-uppercase">{% block header %}Inicio {% endblock header %}</div>
-                {% comment %} {% endblock header %} {% endcomment %}
             </div>
         </header>
         
         <main>
             {% block main %}{% endblock main %}
         </main>
+
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-lg-6 h-100 text-center text-lg-start my-auto"
+                    >
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item">
+                                <a href={% url "AboutMe" %}>About</a></a>
+                            </li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">
+                            &copy; Your Website 2023. All Rights Reserved.
+                        </p>
+                    

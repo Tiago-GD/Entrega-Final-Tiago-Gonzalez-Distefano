@@ -21,8 +21,8 @@ Auriculares
 {% if listado_de_auriculares %}
 <ul>
     {% for auricular in listado_de_auriculares %}
-    <li> {{auricular}} </li>
-        {% endfor %}
+    <li>{{auricular}} | <a href={% url "detalle_auricular" auricular.id %}>Detalles</a> | <a href={% url "actualizar_auricular" auricular.id %}>Actualizar</a> | <a href={% url "eliminar_auricular" auricular.id %}>Eliminar</a> 
+      {% endfor %}
 </ul>
 {% else %}
 <p>No se encontraron auriculares.</p>

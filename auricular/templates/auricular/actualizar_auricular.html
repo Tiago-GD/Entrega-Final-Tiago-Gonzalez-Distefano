@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+ActualizarAuriculares
+{% endblock title_head %}
+
+{% block header %}
+Actualizar Auricular
+{% endblock header %}
+
+
+{% block main %}
+
+<style>
+    .custom-form {
+        margin-top: 20px; /* Agregado espacio arriba del formulario */
+        margin-bottom: 20px; /* Agregado espacio abajo del formulario */
+    }
+
+    .custom-form table {
+        width: 100%; /* Ancho completo del formulario */
+        border-collapse: collapse; /* Colapso de borde para una apariencia más limpia */
+    }
+
+    .custom-form th, .custom-form td {
+        padding: 10px; /* Espaciado interno de celdas */
+        border: 1px solid #ddd; /* Borde de celda delgada */
+        text-align: left; /* Alineación del texto a la izquierda */
+    }
+
+    .custom-form th {
+        background-color: #f39c12; /* Color de fondo naranja para encabezados */
+        color: white; /* Texto blanco para encabezados */
+    }
+
+    .custom-form input[type="text"],
+    .custom-form input[type="password"],
+    .custom-form select {
+        width: 100%; /* Ancho completo para campos de entrada y selección */
+        padding: 8px; /* Espaciado interno del campo de entrada y selección */
+        margin: 8px 0; /* Margen arriba y abajo del campo de entrada y selección */
+        display: inline-block;
+        border: 1px solid #ccc; /* Borde del campo de entrada y selección */
+        box-sizing: border-box;
+    }
+
+    .custom-form input[type="submit"] {
+        background-color: #f39c12; /* Color de fondo naranja para el botón de envío */
+        color: white; /* Texto blanco para el botón de envío */
+        padding: 10px 20px; /* Espaciado interno del botón de envío */
+        border: none; /* Sin borde en el botón de envío */
+        border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+        cursor: pointer; /* Cambiar el cursor a mano al pasar sobre el botón */
+    }
+
+    .custom-form input[type="submit"]:hover {
+        background-color: #d68910; /* Color de fondo naranja más oscuro al pasar sobre el botón */
+    }
+</style>
+
+<form class="custom-form" action="" method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form}}
+    </table>
+
+    <input type="submit" value="Actualizar">
+</form>
+
+
+{% endblock main %}

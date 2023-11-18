@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+{{request.user.username}}
+{% endblock title_head %}
+
+{% block header %}
+{{request.user.username}}
+{% endblock header %}
+
+
+{% block main %}
+<style>
+    .profile-details {
+      list-style-type: none;
+      padding: 20px 0; /* Agregado espacio arriba y abajo */
+    }
+  
+    .profile-details li {
+      margin-bottom: 15px; /* Aumentado el espacio entre elementos */
+    }
+  
+    .profile-details strong {
+      color: #f39c12; /* Naranja */
+    }
+  
+    .avatar-circle {
+      border-radius: 50%;
+      margin-top: 20px; /* Agregado espacio arriba del avatar */
+      margin-bottom: 20px; /* Agregado espacio abajo del avatar */
+    }
+  
+    .profile-actions {
+      margin-top: 20px;
+      margin-bottom: 20px; /* Agregado espacio abajo de los botones */
+    }
+  </style>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="profile-details">
+          <li><strong>Nombre:</strong> {{request.user.first_name}}</li>
+          <li><strong>Apellido:</strong> {{request.user.last_name}}</li>
+          <li><strong>Email:</strong> {{request.user.email}}</li>
+          <li><strong>Biografía:</strong> {{request.user.datosextra.biografia | safe}}</li>
+        </ul>
+        <div class="profile-actions">
+          <a class="btn btn-primary" href={% url "editar_perfil" %}>Editar perfil</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        {% if request.user.datosextra.avatar and request.user.datosextra.avatar.url %}
+        <img src="{{ request.user.datosextra.avatar.url }}" alt="avatar" class="avatar-circle" height="150px">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  
+{% endblock main %}

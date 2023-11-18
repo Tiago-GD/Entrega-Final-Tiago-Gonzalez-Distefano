@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Reloj {{reloj.id}}
+{% endblock title_head %}
+
+{% block header %}
+Reloj {{reloj.id}}
+{% endblock header %}
+
+{% block main %}
+
+<style>
+    .phone-details {
+        list-style-type: none;
+        padding: 20px 0; /* Agregado espacio arriba y abajo */
+    }
+
+    .phone-details li {
+        margin-bottom: 15px; /* Aumentado el espacio entre elementos */
+    }
+
+    .phone-details strong {
+        color: #f39c12; /* Naranja */
+    }
+
+    .phone-image {
+        border-radius: 10px; /* Ajustado el radio de borde para una apariencia más suave */
+        margin-top: 20px; /* Agregado espacio arriba de la imagen */
+        margin-bottom: 20px; /* Agregado espacio abajo de la imagen */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="phone-details">
+                <li><strong>Marca:</strong> {{ reloj.marca }}</li>
+                <li><strong>Modelo:</strong> {{ reloj.modelo }}</li>
+                <li><strong>Descripción:</strong> {{ reloj.descripcion | safe }}</li>
+                <li><strong>Fecha de creación:</strong> {{ reloj.fecha_creacion }}</li>
+                {% if reloj.foto %}
+                    <li><strong>Foto:</strong> <img src="{{ reloj.foto.url }}" alt="FotoReloj" class="phone-image" height="250px"></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
+

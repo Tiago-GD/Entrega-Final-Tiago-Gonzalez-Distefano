@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+EliminarAuricular
+{% endblock title_head %}
+
+{% block header %}
+Elimiar Auricular
+{% endblock header %}
+
+{% block main %}
+
+<style>
+    .confirmation-form {
+        margin-top: 20px; /* Agregado espacio arriba del formulario */
+        margin-bottom: 20px; /* Agregado espacio abajo del formulario */
+    }
+
+    .confirmation-message {
+        font-size: 18px; /* Tamaño de fuente aumentado */
+        margin-bottom: 10px; /* Aumentado el espacio entre el mensaje y el botón */
+    }
+
+    .confirm-button {
+        background-color: #d9534f; /* Rojo - Puedes cambiar el color */
+        color: #fff; /* Texto blanco */
+        padding: 10px 15px; /* Aumentado el espacio interno del botón */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .confirm-button:hover {
+        background-color: #c9302c; /* Cambio de color al pasar el ratón */
+    }
+</style>
+
+<form action="" method="POST" class="confirmation-form">
+    {% csrf_token %}
+    <p class="confirmation-message">¿Desea eliminar el auricular {{ auricular.marca }} - {{ auricular.modelo }} - {{ auricular.fecha_creacion }}?</p>
+    <input type="submit" class="confirm-button" value="Confirmar">
+</form>
+
+{% endblock main %} 

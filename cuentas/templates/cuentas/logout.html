@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Logout
+{% endblock title_head %}
+
+{% block header %}
+Cerrar sesión
+{% endblock header %}
+
+
+{% block main %}
+<style>
+    .success-message {
+        color: #f39c12; /* Color naranja */
+        font-size: 24px; /* Tamaño del texto */
+        text-align: center; /* Alineación del texto */
+        border: 2px solid #f39c12; /* Borde alrededor del mensaje */
+        padding: 10px; /* Espaciado interno del mensaje */
+        border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+    }
+</style>
+
+<div class="success-message">
+    Cerraste sesión con éxito
+</div>
+
+{% endblock main %}
+
+
+
