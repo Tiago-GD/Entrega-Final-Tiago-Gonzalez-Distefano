@@ -32,6 +32,9 @@ En la esquina superior derecha, hay dos botones: "Registro" e "Iniciar Sesión".
 **Sesión Iniciada:**
 Una vez iniciada la sesión, tendrás acceso a más pantallas. Si tocas tu nombre, se mostrará tu información personal, además de botones para "Editar Perfil" y "Cambiar Contraseña".
 
+**Chat:**
+Si tocas el botón de "Chat" ubicado a la derecha de "Cerrar Sesión", te llevará a una pestaña donde podrás hablar con los demás usuarios del sitio web. Para esto, tendrás que estar logueado.
+
 *----------------------------------------------------------------------*
 
 **Video de muestra:**
