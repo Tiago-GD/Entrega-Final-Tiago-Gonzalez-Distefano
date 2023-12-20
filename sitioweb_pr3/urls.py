@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include('telefono.urls')),
     path('auricular/', include('auricular.urls')),
     path('reloj/', include('reloj.urls')),
-    path('cuentas/', include('cuentas.urls'))
+    path('cuentas/', include('cuentas.urls')),
+    path('chat/', include('chat.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

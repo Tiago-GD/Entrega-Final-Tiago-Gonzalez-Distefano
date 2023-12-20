@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'telefono',
     'auricular',
     'reloj',
+    'chat',
     'cuentas',
     'ckeditor',
 ]

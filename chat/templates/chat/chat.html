@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+Chat
+{% endblock title_head %}
+
+{% block header %}
+Chat
+{% endblock header %}
+
+{% block main %}
+<style>
+    .chat-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .chat-description {
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #555;
+    }
+
+    .message-box {
+        margin-bottom: 20px;
+    }
+
+    .message {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .message .sender {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .message .timestamp {
+        font-size: 0.8em;
+        color: #888;
+    }
+
+    .message-form {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f0f0f0;
+        padding: 10px;
+        box-sizing: border-box;
+        border-top: 1px solid #ccc;
+        display: flex;
+    }
+
+    .message-form textarea {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .message-form button {
+        background-color: #f39c12;
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .message-form button:hover {
+        background-color: #d68910;
+    }
+</style>
+
+<div class="chat-container">
+    <div class="chat-description">
+        <p>¡Bienvenido al chat! Aquí puedes hablar con todos los usuarios de la página.</p>
+    </div>
+
+    <div class="message-box">
+        {% for message in messages %}
+            <div class="message">
+                <p class="sender">{{ message.sender }} <span class="timestamp">({{ message.timestamp|time:"H:i" }})</span></p>
+                <p>{{ message.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<form class="message-form" method="post" action="{% url 'send_message' %}">
+    {% csrf_token %}
+    <textarea name="content" placeholder="Escribe tu mensaje aquí" rows="3"></textarea>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock main %}
